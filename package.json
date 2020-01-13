@@ -1,0 +1,45 @@
+{
+  "name": "scope-for-python-action",
+  "version": "1.0.0",
+  "description": "Scope for Python GitHub Action",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @zeit/ncc build ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/undefinedlabs/scope-for-python-action.git"
+  },
+  "keywords": [
+    "test",
+    "observability",
+    "microservices"
+  ],
+  "author": "Undefined Labs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/undefinedlabs/scope-for-python-action/issues"
+  },
+  "homepage": "https://github.com/undefinedlabs/scope-for-python-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint src/* --fix",
+      "git add"
+    ]
+  }
+}

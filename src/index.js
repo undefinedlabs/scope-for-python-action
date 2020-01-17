@@ -33,16 +33,17 @@ async function run() {
     const result = await exec.exec('pip install scopeagent', null, process.env)
     console.log('Install result', result)
 
-    return ExecScopeRun(`scope-run ${command}`, apiEndpoint, apiKey)
+    return ExecScopeRun(`scope-run ${command}`, apiEndpoint, apiKey, dsn)
   } catch (error) {
     core.setFailed(error.message)
   }
 }
 
-function ExecScopeRun(command, apiEndpoint, apiKey) {
+function ExecScopeRun(command, apiEndpoint, apiKey, dsn) {
   return exec.exec(command, null, {
     env: {
       ...process.env,
+      SCOPE_DSN: dsn,
       SCOPE_API_ENDPOINT: apiEndpoint,
       SCOPE_APIKEY: apiKey,
       SCOPE_AUTO_INSTRUMENT: true,

@@ -30,12 +30,14 @@ async function run() {
       console.log(`DSN has been set.`)
     }
 
-    await exec.exec('pip install scopeagent==0.3.7', null, process.env)
+    await exec.exec('pip install scopeagent==0.3.6', null, process.env)
 
     const result = await exec.exec('scope-run -v')
     console.log('Scope run version', result)
 
     await ExecScopeRun(`scope-run -D ${command}`, apiEndpoint, apiKey, dsn)
+
+    throw Error('can call it again')
   } catch (error) {
     core.setFailed(error.message)
   }

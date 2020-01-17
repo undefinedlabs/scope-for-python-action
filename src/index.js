@@ -32,12 +32,7 @@ async function run() {
 
     await exec.exec('pip install scopeagent==0.3.10b1', null, process.env)
 
-    const result = await exec.exec('scope-run -v')
-    console.log('Scope run version', result)
-
-    await ExecScopeRun(`scope-run -D ${command}`, apiEndpoint, apiKey, dsn)
-
-    throw Error('can call it again')
+    await ExecScopeRun(`scope-run ${command}`, apiEndpoint, apiKey, dsn)
   } catch (error) {
     core.setFailed(error.message)
   }
@@ -48,9 +43,6 @@ function ExecScopeRun(command, apiEndpoint, apiKey, dsn) {
     env: {
       ...process.env,
       SCOPE_DSN: dsn,
-      SCOPE_API_ENDPOINT: apiEndpoint,
-      SCOPE_APIKEY: apiKey,
-      SCOPE_AUTO_INSTRUMENT: true,
     },
   })
 }

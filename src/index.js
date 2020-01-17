@@ -30,7 +30,7 @@ async function run() {
       console.log(`DSN has been set.`)
     }
 
-    await exec.exec('pip install scopeagent==0.3.6', null, process.env)
+    await exec.exec('pip install scopeagent', null, process.env)
 
     const result = await exec.exec('scope-run -v')
     console.log('Scope run version', result)
@@ -51,6 +51,7 @@ function ExecScopeRun(command, apiEndpoint, apiKey, dsn) {
       SCOPE_API_ENDPOINT: apiEndpoint,
       SCOPE_APIKEY: apiKey,
       SCOPE_AUTO_INSTRUMENT: true,
+      SCOPE_INSTRUMENTATION_HTTP_PAYLOADS: false,
     },
   })
 }

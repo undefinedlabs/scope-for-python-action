@@ -54,6 +54,7 @@ function ExecScopeRun(command, apiEndpoint, apiKey, dsn) {
       SCOPE_APIKEY: apiKey,
       SCOPE_AUTO_INSTRUMENT: true,
       SCOPE_INSTRUMENTATION_HTTP_PAYLOADS: false,
+      SCOPE_REPOSITORY: 'https://github.com/juan-fernandez/scopeagent-reference-django',
     },
   })
 }

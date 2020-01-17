@@ -32,10 +32,10 @@ async function run() {
 
     await exec.exec('pip install scopeagent', null, process.env)
 
-    const result = exec.exec('scope-run -v')
+    const result = await exec.exec('scope-run -v')
     console.log('Scope run version', result)
 
-    return ExecScopeRun(`scope-run -D ${command}`, apiEndpoint, apiKey, dsn)
+    await ExecScopeRun(`scope-run -D ${command}`, apiEndpoint, apiKey, dsn)
   } catch (error) {
     core.setFailed(error.message)
   }

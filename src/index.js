@@ -30,7 +30,8 @@ async function run() {
       console.log(`DSN has been set.`)
     }
 
-    await exec.exec('pip install scopeagent', null, process.env)
+    await exec.exec('pip install scopeagent==0.3.7', null, process.env)
+    await exec.exec('pip install pyyaml', null, process.env)
 
     const result = await exec.exec('scope-run -v')
     console.log('Scope run version', result)

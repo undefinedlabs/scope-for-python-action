@@ -25,7 +25,7 @@ async function run() {
       console.log(`DSN has been set.`)
     }
 
-    await exec.exec('pip install scopeagent==0.3.10b1', null, process.env)
+    await exec.exec('pip install scopeagent==0.3.10b2', null, process.env)
 
     await ExecScopeRun(`scope-run ${command}`, dsn)
   } catch (error) {

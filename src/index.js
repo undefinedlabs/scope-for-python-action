@@ -11,13 +11,13 @@ async function run() {
     const dsn = core.getInput('dsn') || process.env[SCOPE_DSN]
 
     if (!dsn) {
-      throw Error('Cannot find the Scope DSN')
+      throw Error('Cannot find the Scope DSN.')
     }
 
     try {
       new URL(dsn)
     } catch (e) {
-      throw Error('SCOPE_DSN does not have the correct format')
+      throw Error('SCOPE_DSN does not have the correct format.')
     }
 
     console.log(`Command: ${command}`)

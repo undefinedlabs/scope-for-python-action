@@ -18,7 +18,7 @@ steps:
   - uses: actions/checkout@v1
   - uses: actions/setup-python@v1
     with:
-      python-version: "3.x"
+      python-version: '3.x'
   - name: Install dependencies
     run: pip install -r requirements.txt
   - name: Scope for Python

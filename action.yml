@@ -2,10 +2,10 @@ name: 'Scope for Python'
 author: 'Undefined Labs'
 description: 'Automatically instruments and runs your tests using the Scope Python agent'
 inputs:
-  command: # command to run your tests
+  command: # Command to run your tests
     description: 'Command to run your tests'
     required: false
-  dsn: # scope dsn
+  dsn: # Scope DSN
     description: 'Scope DSN'
     required: true
 runs:

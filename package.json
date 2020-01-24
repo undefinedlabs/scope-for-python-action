@@ -1,6 +1,6 @@
 {
   "name": "scope-for-python-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scope for Python GitHub Action",
   "main": "index.js",
   "scripts": {

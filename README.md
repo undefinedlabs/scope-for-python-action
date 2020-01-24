@@ -25,5 +25,5 @@ steps:
     uses: undefinedlabs/scope-for-python-action@v1
     with:
       dsn: ${{secrets.SCOPE_DSN}} # required
-      command: pytest # optional - default is 'pytest'
+      command: python -m unittest discover # optional - default is 'python -m unittest discover'
 ```

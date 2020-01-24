@@ -3,7 +3,7 @@ const exec = require('@actions/exec')
 
 const SCOPE_DSN = 'SCOPE_DSN'
 
-const DEFAULT_COMMAND = 'pytest'
+const DEFAULT_COMMAND = 'python -m unittest discover'
 
 async function run() {
   try {
